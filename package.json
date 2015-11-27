@@ -1,0 +1,27 @@
+{
+  "name": "teknappi_mockserver",
+  "version": "1.0.0",
+  "description": "TEKNappi Mock Server",
+  "license": "EUPL-1.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jvesala/teknappi/"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies" : {
+    "ejs": "2.3.3",
+    "express" : "4.13.3",
+    "body-parser": "1.13.3"
+  },
+  "engines": {
+    "node": "0.12.7"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ]
+}
