@@ -16,6 +16,11 @@ app.post('/tek/api/v1/requestContact/', function(req, res){
   res.send({result: "OK"})
 })
 
+app.post('/tek/api/v1/login/', function(req, res){
+  console.log("WE GOT" + JSON.stringify(req.body))
+  res.send({token: "loggedInTokenString"})
+})
+
 var appPort = process.env.PORT || 3000
 console.log("Mock server listening " + appPort)
 app.listen(appPort)
