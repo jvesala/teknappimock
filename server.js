@@ -18,7 +18,16 @@ app.post('/tek/api/v1/requestContact/', function(req, res){
 
 app.post('/tek/api/v1/login/', function(req, res){
   console.log("WE GOT" + JSON.stringify(req.body))
+  if (req.body.user == "sefe") {
+    res.sendStatus(403)
+  }
   res.send({token: "loggedInTokenString"})
+})
+
+app.get('/tek/api/userdata/:token', function(req, res){
+  console.log("WE GOT" + JSON.stringify(req.body))
+  var response = {"firstName" : "Teemu", "lastName" : "Teekkari", "email" : "teemu.teekkari@otaniemi.fi" , "phoneNumber" : "+35840123123" }
+  res.send(response)
 })
 
 var appPort = process.env.PORT || 3000
