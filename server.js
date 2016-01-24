@@ -20,8 +20,9 @@ app.post('/tek/api/v1/login/', function(req, res){
   console.log("WE GOT" + JSON.stringify(req.body))
   if (req.body.user == "sefe") {
     res.sendStatus(403)
+  } else {
+    res.send({token: "loggedInTokenString"})
   }
-  res.send({token: "loggedInTokenString"})
 })
 
 app.get('/tek/api/userdata/:token', function(req, res){
