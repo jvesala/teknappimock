@@ -31,6 +31,11 @@ app.post('/tek/api/v1/userdata/:token', function(req, res){
   res.send(response)
 })
 
+app.post('/lossi/api/v1/location/', function(req, res){
+  console.log("WE GOT" + JSON.stringify(req.body))
+  res.send({"response" : "ok"})
+})
+
 var appPort = process.env.PORT || 3000
 console.log("Mock server listening " + appPort)
 app.listen(appPort)
