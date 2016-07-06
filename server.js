@@ -5,6 +5,8 @@ var app = express()
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
+var location = {}
+
 // Default Content-Type to Application/Json
 app.use(function(req, res, next) { 
   res.setHeader("Content-Type", "application/json")
@@ -31,7 +33,12 @@ app.post('/tek/api/v1/userdata/:token', function(req, res){
   res.send(response)
 })
 
+app.get("/", function(req, res){
+  res.send(location)
+})
+
 app.post('/lossi/api/v1/location/', function(req, res){
+  location = JSON.stringify(req.body)
   console.log("WE GOT" + JSON.stringify(req.body))
   res.send({"response" : "ok"})
 })
